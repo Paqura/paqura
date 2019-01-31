@@ -5,8 +5,3 @@ export default (arrayOfObjects, path, defaultValue) => {
 
   return resultArray.length ? resultArray : defaultValue;
 };
-
-const arr = [{name: 'first'}, {name: 'last'}];
-const res = _get(arr, 'name', null);
-
-console.log(res) // ['first', 'last']
