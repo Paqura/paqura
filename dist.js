@@ -42,10 +42,13 @@ var Paqura = (function (exports) {
 
   var compact = arr => arr.filter(item => Boolean(item));
 
+  var pipe$1 = (value, fn, ...fns) => fn ? pipe(fn(value), ...fns) : value;
+
   exports.get = get;
   exports.flatten = flatten;
   exports.curry = curry;
   exports.compact = compact;
+  exports.pipe = pipe$1;
 
   return exports;
 
