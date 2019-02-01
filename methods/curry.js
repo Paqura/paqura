@@ -1,4 +1,4 @@
-export default fn => {
+export const curry = fn => {
   const arity = fn.length;
 
   return function inner (...args) {

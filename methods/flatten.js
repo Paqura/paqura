@@ -1,6 +1,6 @@
 const isArray = arrOrNot => Array.isArray(arrOrNot);
 
-export default arr => {
+export const flatten = arr => {
   let result = [];
 
   function checkTypeOfInput(arr) {

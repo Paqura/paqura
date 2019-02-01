@@ -1,7 +1,7 @@
 var Paqura = (function (exports) {
   'use strict';
 
-  var get = (arrayOfObjects, path, defaultValue) => {
+  const get = (arrayOfObjects, path, defaultValue) => {
     const resultArray = arrayOfObjects.map(
       item => item[path]
     );
@@ -11,7 +11,7 @@ var Paqura = (function (exports) {
 
   const isArray = arrOrNot => Array.isArray(arrOrNot);
 
-  var flatten = arr => {
+  const flatten = arr => {
     let result = [];
 
     function checkTypeOfInput(arr) {
@@ -25,7 +25,7 @@ var Paqura = (function (exports) {
     return checkTypeOfInput(arr);
   };
 
-  var curry = fn => {
+  const curry = fn => {
     const arity = fn.length;
 
     return function inner (...args) {
@@ -40,15 +40,15 @@ var Paqura = (function (exports) {
     }
   };
 
-  var compact = arr => arr.filter(item => Boolean(item));
+  const compact = arr => arr.filter(item => Boolean(item));
 
-  var pipe$1 = (value, fn, ...fns) => fn ? pipe(fn(value), ...fns) : value;
+  const pipe = (value, fn, ...fns) => fn ? pipe(fn(value), ...fns) : value;
 
   exports.get = get;
   exports.flatten = flatten;
   exports.curry = curry;
   exports.compact = compact;
-  exports.pipe = pipe$1;
+  exports.pipe = pipe;
 
   return exports;
 

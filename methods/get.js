@@ -1,4 +1,4 @@
-export default (arrayOfObjects, path, defaultValue) => {
+export const get = (arrayOfObjects, path, defaultValue) => {
   const resultArray = arrayOfObjects.map(
     item => item[path]
   );

@@ -1,1 +1,1 @@
-export default (value, fn, ...fns) => fn ? pipe(fn(value), ...fns) : value;
+export const pipe = (value, fn, ...fns) => fn ? pipe(fn(value), ...fns) : value;
