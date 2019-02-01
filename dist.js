@@ -40,9 +40,12 @@ var Paqura = (function (exports) {
     }
   };
 
+  var compact = arr => arr.filter(item => Boolean(item));
+
   exports.get = get;
   exports.flatten = flatten;
   exports.curry = curry;
+  exports.compact = compact;
 
   return exports;
 

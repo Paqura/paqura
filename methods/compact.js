@@ -1,0 +1,1 @@
+export default arr => arr.filter(item => Boolean(item));
