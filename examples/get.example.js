@@ -1,4 +1,4 @@
-import get from './get';
+import get from '../methods/get';
 
 const arr = [{name: 'first'}, {name: 'second'}];
 
