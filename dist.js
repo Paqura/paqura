@@ -44,11 +44,31 @@ var Paqura = (function (exports) {
 
   const pipe = (value, fn, ...fns) => fn ? pipe(fn(value), ...fns) : value;
 
+  const isArray$1 = arrOrNot => Array.isArray(arrOrNot);
+
+  const union = (...arrays) => {
+    const result = [];
+
+    const innerScope = arrays => {
+      isArray$1(arrays)
+        ? arrays.forEach(item => isArray$1(item)
+
+          ? innerScope(item)
+          : !result.includes(item) && result.push(item))
+
+        : result.push(arrays);
+      return result;
+    };
+
+    return innerScope(arrays);
+  };
+
   exports.get = get;
   exports.flatten = flatten;
   exports.curry = curry;
   exports.compact = compact;
   exports.pipe = pipe;
+  exports.union = union;
 
   return exports;
 
