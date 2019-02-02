@@ -12,7 +12,7 @@ describe('Compact method', () => {
     expect(compact([null, undefined, false])).toEqual([]);
   });
 
-  it('should return empty array', () => {
+  it('should return expected array', () => {
     const expectedResult = JSON.stringify([{name: 'delete', handler: function() {}}]);
 
     expect(compact(example)).toBeTruthy();
