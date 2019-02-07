@@ -63,12 +63,30 @@ var Paqura = (function (exports) {
     return innerScope(arrays);
   };
 
+  const debounce = (fn, ms) => {
+    let timer = null;
+
+    return (...args) => {
+      const onComplete = () => {
+        timer = null;
+        return fn.apply(null, args);
+      };
+
+      if(!timer) {
+        clearTimeout(timer);
+      }
+
+      timer = setTimeout(onComplete, ms);
+    };
+  };
+
   exports.get = get;
   exports.flatten = flatten;
   exports.curry = curry;
   exports.compact = compact;
   exports.pipe = pipe;
   exports.union = union;
+  exports.debounce = debounce;
 
   return exports;
 

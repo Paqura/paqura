@@ -17,16 +17,17 @@
   "scripts": {
     "test": "jest --watch"
   },
-
   "jest": {
-    "moduleFileExtensions": ["js"],
+    "moduleFileExtensions": [
+      "js"
+    ],
     "testMatch": [
       "<rootDir>/__tests__/*.test.js"
     ],
-
-    "transformIgnorePatterns": ["<rootDir>/node_modules/"]
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Paqura/paqura.git"
