@@ -1,4 +1,4 @@
-const isArray = arrOrNot => Array.isArray(arrOrNot);
+import {isArray} from '../';
 
 export const flatten = arr => {
   let result = [];

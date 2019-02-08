@@ -1,4 +1,4 @@
-const isArray = arrOrNot => Array.isArray(arrOrNot);
+import {isArray} from '../';
 
 export const union = (...arrays) => {
   const result = [];
