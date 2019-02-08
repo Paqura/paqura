@@ -1,4 +1,4 @@
-import {isArray} from '../';
+import {isArray} from '../index';
 
 export const flatten = arr => {
   let result = [];
