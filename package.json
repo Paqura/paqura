@@ -15,6 +15,7 @@
     "jest": "^24.0.0"
   },
   "scripts": {
+    "build": "rollup index.js --format iife --name Paqura --file dist.js",
     "test": "jest --watch"
   },
   "jest": {

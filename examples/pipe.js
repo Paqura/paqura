@@ -1,3 +1,5 @@
+import {pipe} from '../';
+
 const toLower = str => str.toLowerCase();
 const trim = str => str.trim();
 
