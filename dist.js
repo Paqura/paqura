@@ -40,7 +40,7 @@ var Paqura = (function (exports) {
     }
   };
 
-  const compact = arr => arr.filter(item => Boolean(item));
+  const compact = arr => arr.filter(Boolean);
 
   const pipe = (value, fn, ...fns) => fn ? pipe(fn(value), ...fns) : value;
 
@@ -93,6 +93,24 @@ var Paqura = (function (exports) {
     return arr.filter(item => !keys.includes(item));
   };
 
+  // key is an array key:value ['id', '1']
+
+  const isReject = (element, key) => {
+    return !Boolean(element[key[0]] === key[1]);
+  };
+
+  const reject$$1 = (arr, key) => {
+    if(!isArray(arr)) return [];
+
+    return arr.filter(it => isReject(it, key));
+  };
+
+  const sortBy = (arr, key) => {
+    if(!key) return arr;
+
+    return arr.sort((previous, next) => previous[key].localeCompare(next[key]));
+  };
+
   exports.isArray = isArray;
   exports.get = get;
   exports.flatten = flatten$$1;
@@ -103,6 +121,8 @@ var Paqura = (function (exports) {
   exports.debounce = debounce;
   exports.fromPairs = fromPairs;
   exports.pull = pull$$1;
+  exports.reject = reject$$1;
+  exports.sortBy = sortBy;
 
   return exports;
 
