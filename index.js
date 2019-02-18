@@ -8,3 +8,4 @@ export {union} from './methods/union';
 export {debounce} from './methods/debounce';
 export {fromPairs} from './methods/from-pairs';
 export {pull} from './methods/pull';
+export {reject} from './methods/reject';
