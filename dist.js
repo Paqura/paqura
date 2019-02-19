@@ -111,6 +111,23 @@ var Paqura = (function (exports) {
     return arr.sort((previous, next) => previous[key].localeCompare(next[key]));
   };
 
+  const memo = fn => {
+    let cache = {};
+    let res;
+
+    return (...args) => {
+      const key = JSON.stringify(...args);
+
+      if(cache[key]) {
+        return cache[key];
+      } else {
+        res = fn.apply(undefined, args);
+        cache[key] = res;
+        return res;
+      }
+    }
+  };
+
   exports.isArray = isArray;
   exports.get = get;
   exports.flatten = flatten$$1;
@@ -123,6 +140,7 @@ var Paqura = (function (exports) {
   exports.pull = pull$$1;
   exports.reject = reject$$1;
   exports.sortBy = sortBy;
+  exports.memo = memo;
 
   return exports;
 
