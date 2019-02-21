@@ -11,3 +11,4 @@ export {pull} from './methods/pull';
 export {reject} from './methods/reject';
 export {sortBy} from './methods/sort-by';
 export {memo} from './methods/memo';
+export {chunk} from './methods/chunk';

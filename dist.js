@@ -128,6 +128,19 @@ var Paqura = (function (exports) {
     }
   };
 
+  const chunk = (arr, len) => {
+    if(!len) return arr;
+
+    const result = [];
+    const tail = [...arr];
+
+    while(tail.length > len) {
+      result.push(tail.splice(0, len));
+    }
+
+    return result.concat([tail]);
+  };
+
   exports.isArray = isArray;
   exports.get = get;
   exports.flatten = flatten$$1;
@@ -141,6 +154,7 @@ var Paqura = (function (exports) {
   exports.reject = reject$$1;
   exports.sortBy = sortBy;
   exports.memo = memo;
+  exports.chunk = chunk;
 
   return exports;
 
