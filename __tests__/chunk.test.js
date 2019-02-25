@@ -5,7 +5,7 @@ const expectedOn2Len = [[1, 2], [5, 6], [{name: 'test'}]];
 const expectedOn3Len = [[1, 2, 5], [6, {name: 'test'}]];
 
 describe('chunk function', () => {
-  it('d', () => {
+  it('should return null if first parameter !== True', () => {
     expect(chunk(undefined, 5)).toBe(null);
   });
 
@@ -13,7 +13,7 @@ describe('chunk function', () => {
     expect(chunk(testArray)).toEqual(testArray);
   });
 
-  it('should return array of arrays slitted on length from second param', () => {
+  it('should return array of arrays splitted on length from second param', () => {
     expect(chunk(testArray, 2)).toEqual(expectedOn2Len);
     expect(chunk(testArray, 3)).toEqual(expectedOn3Len);
   });
