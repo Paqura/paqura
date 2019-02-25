@@ -12,3 +12,4 @@ export {reject} from './methods/reject';
 export {sortBy} from './methods/sort-by';
 export {memo} from './methods/memo';
 export {chunk} from './methods/chunk';
+export {compose} from './methods/compose';

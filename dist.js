@@ -129,6 +129,7 @@ var Paqura = (function (exports) {
   };
 
   const chunk = (arr, len) => {
+    if(!arr) return null;
     if(!len) return arr;
 
     const result = [];
@@ -140,6 +141,9 @@ var Paqura = (function (exports) {
 
     return result.concat([tail]);
   };
+
+  const compose = (...fns) =>
+    arg => fns.reduce((composed, fn) => fn(composed), arg);
 
   exports.isArray = isArray;
   exports.get = get;
@@ -155,6 +159,7 @@ var Paqura = (function (exports) {
   exports.sortBy = sortBy;
   exports.memo = memo;
   exports.chunk = chunk;
+  exports.compose = compose;
 
   return exports;
 
