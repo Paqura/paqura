@@ -6,8 +6,8 @@ const splitText = str => str.split('');
 describe('compose', () => {
   it('should return expected result', () => {
     const enhanced = compose(
-      toUpper,
       splitText,
+      toUpper,
     )('hello');
 
     const expectedResult = ['H', 'E', 'L', 'L', 'O'];
