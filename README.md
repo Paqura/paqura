@@ -5,7 +5,7 @@ First, and innumerable action: create a method in ```methods``` folder, and crea
 ## For build
 
 1) npm i -g rollup
-2) rollup <INPUT_FILENAME>.js --format iife --name <PACKAGE_NAME> --file <FILE_NAME>.js
+2) for build use
 ```
 rollup index.js --format iife --name Paqura --file dist.js
 ```
